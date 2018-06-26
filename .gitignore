@@ -12,7 +12,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-/dentallabprofile.sql
+*.sql
 
 # Ignore uploaded files in development
 /storage/*
