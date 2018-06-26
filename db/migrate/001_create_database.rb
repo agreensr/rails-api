@@ -304,7 +304,7 @@ class CreateDatabase < ActiveRecord::Migration[5.2]
         t.date "date", null: false
       end
     
-      create_table "labprofile", primary_key: "labID", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+      create_table "labprofiles", primary_key: "labID", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
         t.string "labLogin", limit: 128, null: false
         t.string "labPassword", limit: 12, default: "", null: false
         t.string "labName", null: false
