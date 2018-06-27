@@ -9,50 +9,50 @@ module Api
                 render json: { status: 'SUCCESS', message: 'Loaded all Notes', data:labnotes }, status: :ok
             end
 
-    #         def show
-    #             labprofile = Labprofile.find(params[:id])
-    #             render json: { status: 'SUCCESS', message: 'Loaded Profile', data:labprofile }, status: :ok
-    #         end
+            def show
+                labnote = Labnote.find(params[:id])
+                render json: { status: 'SUCCESS', message: 'Loaded Note', data:labnote }, status: :ok
+            end
 
-    #         def create
-    #             labprofile = Labprofile.new(labprofile_params)
+            def create
+                labnote = Labnote.new(labnote_params)
 
-    #             if labprofile.save
-    #                 render json: { status: 'SUCCESS', message: 'Save Profile', data:labprofile }, status: :ok
-    #             else
-    #                 render json: { status: 'ERROR', message: 'Profile not saved', 
-    #                 data:labprofile.errors }, status: :unprocessable_entity
-    #             end
+                if labnote.save
+                    render json: { status: 'SUCCESS', message: 'Save Note', data:labnote }, status: :ok
+                else
+                    render json: { status: 'ERROR', message: 'Note not saved', 
+                    data:labnote.errors }, status: :unprocessable_entity
+                end
 
-    #         end
+            end
 
-    #         def update
+            def update
 
-    #             labprofile = Labprofile.find(params[:id])
-    #             if labprofile.update_attributes(labprofile_params)
-    #                 render json: { status: 'SUCCESS', message: 'Profile Updated', data:labprofile }, status: :ok
-    #             else
-    #                 render json: { status: 'ERROR', message: 'Profile not Updated', 
-    #                 data:labprofile.errors }, status: :unprocessable_entity
-    #             end
+                labnote = Labnote.find(params[:id])
+                if labnote.update_attributes(labnote_params)
+                    render json: { status: 'SUCCESS', message: 'Note Updated', data:labnote }, status: :ok
+                else
+                    render json: { status: 'ERROR', message: 'Note not Updated', 
+                    data:labnote.errors }, status: :unprocessable_entity
+                end
                 
-    #         end
+            end
 
 
-    #         def destroy
-    #             labprofile = Labprofile.find(params[:id])
-    #             labprofile.destroy
-    #             render json: { status: 'SUCCESS', message: 'Deleted Profile', data:labprofile }, status: :ok
+            def destroy
+                labnote = Labnote.find(params[:id])
+                labnote.destroy
+                render json: { status: 'SUCCESS', message: 'Deleted Note', data:labnote }, status: :ok
 
-    #         end
+            end
 
-    #         private
+            private
 
-    #         # These are params that will be passed, the db column will not be updated if its not below.
-            def labprofile_params
+            # These are params that will be passed, the db column will not be updated if its not below.
+            def labnote_params
                 params.permit(
-                    :labID,:pref,:noteCaller,:noteTalkedTo,:noteTime,:noteDate,:noteText,
-                    :noteFollowUpDate,:noteFollowUpTime,:noteEvent,:status,:created_at)              
+                    :labID, :pref, :noteCaller, :noteTalkedTo, :noteTime, :noteDate, :noteText,
+                    :noteFollowUpDate, :noteFollowUpTime, :noteEvent, :status, :created_at)              
             end
          end
     end
