@@ -4,7 +4,8 @@ module Api
         class LabprofilesController < ApplicationController
 
             def index
-                labprofiles = Labprofile.order('labID DESC').limit(5);
+                #labprofiles = Labprofile.order('labID DESC').limit(5)
+                labprofiles = Labprofile.order('labID DESC')
                 render json: { status: 'SUCCESS', message: 'Loaded all Profiles', data:labprofiles }, status: :ok
             end
 
@@ -39,7 +40,6 @@ module Api
 
 
             def destroy
-
                 labprofile = Labprofile.find(params[:id])
                 labprofile.destroy
                 render json: { status: 'SUCCESS', message: 'Deleted Profile', data:labprofile }, status: :ok
@@ -48,9 +48,11 @@ module Api
 
             private
 
+            # These are params that will be passed, the db column will not be updated if its not below.
             def labprofile_params
                 params.permit(
-                    :labLogin, :labName,
+                    :labLogin, 
+                    :labPassword, :labName,
                     :labContact, :labStatus,
                     :labPhone, :labPhone2,
                     :labFax, :labAddress,
