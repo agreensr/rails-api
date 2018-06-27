@@ -714,7 +714,7 @@ class CreateDatabase < ActiveRecord::Migration[5.2]
         t.timestamp "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
       end
     
-      add_foreign_key "profiles_questions", "labprofile", column: "profile_id", primary_key: "labid", name: "profiles_questions_ibfk_1"
+      add_foreign_key "profiles_questions", "labprofiles", column: "profile_id", primary_key: "labid", name: "profiles_questions_ibfk_1"
       add_foreign_key "profiles_questions", "questions", name: "profiles_questions_ibfk_2"
     end
 

@@ -1,7 +1,6 @@
 class Labprofile < ApplicationRecord
-
-    validates :labid, presence: true
-    validates :labname, presence: true
+    validates :labName, presence: true
+    validates :labLogin, presence: true
 
 end
 
