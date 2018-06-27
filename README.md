@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Project
 
-Things you may want to cover:
+- Taking an existing database and creating api endpoints in a Rails app
 
-* Ruby version
+* Ruby version 
+- 2.5.1
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Rails version 
+- 5.2
